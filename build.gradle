@@ -1,0 +1,50 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.khs.stockticker.StockTickerServer"
+sourceCompatibility = 1.8
+version = '1.0'
+
+ext.shiro  = 'org.apache.shiro:shiro-core:1.2.3'
+ext.slf4jc = 'org.slf4j:jcl-over-slf4j:1.7.7'
+ext.slf4j  = 'org.slf4j:slf4j-api:1.7.10'
+ext.slf4js = 'org.slf4j:slf4j-simple:1.7.10'
+ext.netty  = 'io.netty:netty-all:4.0.24.Final'
+ext.clang  = 'org.apache.commons:commons-lang3:3.3.2'
+ext.guava  = 'com.google.guava:guava:18.0'
+ext.gson   = 'com.google.code.gson:gson:2.3.1'
+ext.httpc  = 'org.apache.httpcomponents:httpclient:4.3.6'
+ext.json   = 'com.eclipsesource.minimal-json:minimal-json:0.9.1'
+
+
+repositories {
+    mavenCentral()
+}
+
+configurations {   
+   compile.exclude group: 'commons-logging', module: 'commons-logging'
+}
+
+jar {
+   manifest {
+      attributes(
+         'Implementation-Title': project.name,
+         'Implementation-Version': version,
+         'Implementation-Vendor': "Keyhole Software, LLC"
+      )
+   }
+}
+
+dependencies {
+   compile shiro
+   compile slf4jc
+   compile slf4j
+   compile slf4js
+   compile netty
+   compile clang
+   compile guava
+   compile gson
+   compile httpc
+   compile json
+   testCompile group: 'junit', name: 'junit', version: '4.11'
+}
