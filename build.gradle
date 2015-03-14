@@ -5,7 +5,6 @@ mainClassName = "com.khs.stockticker.StockTickerServer"
 sourceCompatibility = 1.8
 version = '1.0'
 
-ext.shiro  = 'org.apache.shiro:shiro-core:1.2.3'
 ext.slf4jc = 'org.slf4j:jcl-over-slf4j:1.7.7'
 ext.slf4j  = 'org.slf4j:slf4j-api:1.7.10'
 ext.slf4js = 'org.slf4j:slf4j-simple:1.7.10'
@@ -36,7 +35,6 @@ jar {
 }
 
 dependencies {
-   compile shiro
    compile slf4jc
    compile slf4j
    compile slf4js
