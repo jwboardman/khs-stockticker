@@ -46,12 +46,14 @@ function doSend(message) {
 }
 
 function sendAdd(symbol) {
-	websocket.send('{"command":"add", "tickerSymbol":"' + symbol + '"}');
+    var message = '{"command":"add", "tickerSymbol":"' + symbol + '"}';
+	websocket.send(message);
 	writeToScreen("SENT: " + message);
 }
 
 function sendRemove(symbol) {
-	websocket.send('{"command":"remove", "tickerSymbol":"' + symbol + '"}');
+    var message = '{"command":"remove", "tickerSymbol":"' + symbol + '"}'
+	websocket.send(message);
 	writeToScreen("SENT: " + message);
 }
 
